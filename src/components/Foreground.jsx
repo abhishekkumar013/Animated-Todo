@@ -26,7 +26,7 @@ const Foreground = () => {
       </span>
       {TodoData.length > 0 &&
         TodoData.map((item, idx) => (
-          <Card key={idx} {...item} refrence={ref} />
+          <Card key={idx} data={item} reference={ref} />
         ))}
       {isFormOpen && <Form />}
     </div>

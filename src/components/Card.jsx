@@ -6,13 +6,14 @@ import { motion } from 'framer-motion'
 import { useDispatch } from 'react-redux'
 import { RemoveTodo } from '../Redux/slice'
 
-const Card = ({ ...data }, refrence) => {
+const Card = ({ data, reference }) => {
   const dispatch = useDispatch()
+  console.log(data)
 
   return (
     <motion.div
       drag
-      dragConstraints={refrence}
+      dragConstraints={reference}
       whileDrag={{ scale: 1.1 }}
       dragElastic={0.2}
       dragTransition={{ bounceStiffness: 600, bounceDamping: 30 }}

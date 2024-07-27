@@ -13,7 +13,7 @@ const Form = () => {
   // State for form inputs
   const [desc, setDesc] = useState('')
   // const [filesize, setFilesize] = useState('')
-  const [close, setClose] = useState(false)
+
   const [isOpen, setIsOpen] = useState(false)
   const [tagTitle, setTagTitle] = useState('')
   const [tagColor, setTagColor] = useState('')
@@ -40,7 +40,7 @@ const Form = () => {
       AddTodo({
         desc,
         filesize: totalSizeInMB,
-        close,
+
         isOpen,
         tagTitle,
         tagColor,
@@ -59,7 +59,7 @@ const Form = () => {
   return (
     <motion.div
       drag
-      className="relative flex-shrink-0 w-60  h-[400px]  rounded-[45px] bg-zinc-900/90 text-white p-6 overflow-hidden shadow-lg"
+      className="relative flex-shrink-0 w-60  h-[370px]  rounded-[45px] bg-zinc-900/90 text-white p-6 overflow-hidden shadow-lg"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="mb-4">
@@ -83,22 +83,6 @@ const Form = () => {
             onChange={(e) => setDesc(e.target.value)}
             className="w-full p-2 mt-1 bg-gray-700 text-white rounded"
             required
-          />
-        </div>
-
-        <div className="mb-4 flex flex-row gap-4">
-          <label
-            htmlFor="close"
-            className="block text-white text-sm font-semibold"
-          >
-            Close:
-          </label>
-          <input
-            id="close"
-            type="checkbox"
-            checked={close}
-            onChange={(e) => setClose(e.target.checked)}
-            className="mt-1"
           />
         </div>
 

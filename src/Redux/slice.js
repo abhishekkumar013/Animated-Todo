@@ -11,7 +11,6 @@ const appSlice = createSlice({
         id: nanoid(),
         desc: action.payload.desc,
         filesize: action.payload.filesize,
-        close: action.payload.close,
         tag: {
           isOpen: action.payload.isOpen,
           tagTitle: action.payload.tagTitle,
@@ -28,9 +27,9 @@ const appSlice = createSlice({
 export const { addTodo, removeTodo } = appSlice.actions
 export default appSlice.reducer
 
-export const AddTodo = (desc, filesize, close, isOpen, tagTitle, tagColor) => {
+export const AddTodo = (desc, filesize, isOpen, tagTitle, tagColor) => {
   return async (dispatch, getState) => {
-    dispatch(addTodo({ desc, filesize, close, isOpen, tagTitle, tagColor }))
+    dispatch(addTodo({ desc, filesize, isOpen, tagTitle, tagColor }))
   }
 }
 export const RemoveTodo = (id) => {
