@@ -28,7 +28,7 @@ const Foreground = () => {
         TodoData.map((item, idx) => (
           <Card key={idx} data={item} reference={ref} />
         ))}
-      {isFormOpen && <Form />}
+      {isFormOpen && <Form reference={ref} />}
     </div>
   )
 }

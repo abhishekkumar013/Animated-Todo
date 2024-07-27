@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { SetFormClose } from '../Redux/formslice'
 import { IoRemoveCircle } from 'react-icons/io5'
 
-const Form = () => {
+const Form = ({ reference }) => {
   const dispatch = useDispatch()
 
   // State for form inputs
@@ -59,6 +59,10 @@ const Form = () => {
   return (
     <motion.div
       drag
+      dragConstraints={reference}
+      whileDrag={{ scale: 1.1 }}
+      dragElastic={0.2}
+      dragTransition={{ bounceStiffness: 600, bounceDamping: 30 }}
       className="relative flex-shrink-0 w-60  h-[370px]  rounded-[45px] bg-zinc-900/90 text-white p-6 overflow-hidden shadow-lg"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
